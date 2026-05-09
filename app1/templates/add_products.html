@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Add Products {% endblock %}
+
+{% block content %}
+
+<h2>Add your products </h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

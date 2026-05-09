@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<h2>
+    this is home page for testing django server
+</h2>
+
+<nav>
+    <ul>
+        <a href="{% url 'products_list' %}">Products</a>
+        <a href="{% url 'add_products' %}">Add products</a>
+        
+    </ul>
+</nav>
+
+{% endblock %}

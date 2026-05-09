@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Products {% endblock %}
+
+{% block content %}
+<h2>List of all products</h2>
+<ul>
+    {% for x in product %}
+    <li>
+        {{ x.product_name }} - ${{ x.price }} - {{ x.quantity }} - {{ x.size }} - {{ x.colors }}
+        <a href="{% url 'update_products' x.pk %}">Update product</a>
+        <a href="{% url 'delete_products' x.pk %}">Delete product</a>
+    </li>
+    {% empty %}
+    <li>
+        No Products available
+    </li>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}
